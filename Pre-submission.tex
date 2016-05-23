@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                             %
 %   Pre-submission Review - template      				                      %
 %                                                                             %
@@ -31,6 +31,22 @@
 %\titlespacing{\subsection}{0pt}{1ex}{0ex}
 %\titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
 \usepackage{indentfirst}
+
+\usepackage[utf8]{inputenc}
+% Google "dvips colors" for the names of a range of colors
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{cancel}
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage{txfonts}
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
 
 %% Journals definitions
 
@@ -95,9 +111,29 @@
 
 %% END Journals definitions
 
-\def\kms{$\rm km\;s^{-1}$}
-\def\arcpix{$\rm ''\;pixel^{-1}$}
-\def\angpix{$\rm \AA\;pixel^{-1}$}
+\newcommand{\MMcom}[1]{{\color{Plum}\textbf{#1}}}
+\newcommand{\Sref}[1]{Section \ref{#1}}
+\newcommand{\Tref}[1]{Table \ref{#1}}
+\sfcode`\.=1001\sfcode`\?=1001\sfcode`\!=1001
+\newcommand{\Aref}[1]{Appendix \ref{#1}}
+\newcommand{\Fref}[1]{\ifhmode \ifnum\spacefactor=1001 Figure \ref{#1}\else Fig.\ \ref{#1}\fi \else Figure \ref{#1}\fi}
+\newcommand{\Eref}[1]{\ifhmode \ifnum\spacefactor=1001 Equation (\ref{#1})\else equation (\ref{#1})\fi \else Equation (\ref{#1})\fi}
+\newcommand{\cms}{\ensuremath{\textrm{cm\,s}^{-1}}}
+\newcommand{\ms}{\ensuremath{\textrm{m\,s}^{-1}}}
+\newcommand{\kms}{\ensuremath{\textrm{km\,s}^{-1}}}
+\newcommand{\SN}{\ensuremath{\textrm{S/N}}}
+\newcommand{\chisq}{\ensuremath{\chi^2}}
+\newcommand{\chisqn}{\ensuremath{\chi^2_\nu}}
+\newcommand{\lya}{\ensuremath{\textrm{Ly}\alpha}}
+\newcommand{\lyb}{\ensuremath{\textrm{Ly}\beta}}
+\newcommand{\zem}{\ensuremath{z_\text{\scriptsize em}}}
+\newcommand{\zab}{\ensuremath{z_\text{\scriptsize abs}}}
+\newcommand{\NHI}{\ensuremath{N_\textsc{h\,\scriptsize{i}}}}
+%\newcommand{\ion}[2]{\ensuremath{\textrm{#1\,{\scshape{#2}}}}}
+\newcommand{\tran}[3]{\ensuremath{\ion{#1}{#2}\,\lambda\textrm{#3}}}
+\newcommand{\varal}{\ensuremath{\Delta \alpha/\alpha}}
+\newcommand{\angstrom}{\mbox{\normalfont\AA}}
+
 
 \hyphenation{}
 
@@ -108,8 +144,8 @@
 %                                                                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Pre-submission Review}
-\author[Student Name]
- {Student Name}
+\author[Srđan KOTUŠ]
+ {Srđan KOTUŠ}
 
 \pagestyle{empty}
 \begin{document}
@@ -130,37 +166,37 @@
 \LARGE C\Large entre for \LARGE A\Large strophysics and \LARGE S\Large upercomputing\\
 \vspace{0.5cm}
 
-\large Mid-candidature Review\\
+\large Pre-submission Review\\
 \vspace{0.5cm}
 
 
 
-\Huge{\bf Title of the Ph.D. project}
+\Huge{\bf Do the fundamental constants of nature vary in spacetime?}
 
 \vspace{3cm}
-\large{Starting date: 1st January 2014\\}
+\large{Starting date: 23rd September 2013\\}
 \vspace{0.2cm}
-\large{Number of months of full-time equivalent candidature: 19}
+\large{Number of months of full-time equivalent candidature: 32}
 \vspace{0.5cm}
 \end{center}
 
 
 \begin{flushleft}
 {\bf Coordinating Supervisor:}\\
-Name main supervisor\\
+Prof.~Michael Murphy\\
 \vspace{0.5cm}
 {\bf Associate Supervisor:}\\
-Name(s) second supervisor(s)\\
+A Prof.~Emma Ryan-Weber\\
 \end{flushleft}
 
 \begin{flushright}
 {\bf Student:}\\
-Student's name / Student's ID number
+Srđan KOTUŠ / 4928237
 \end{flushright}\hspace{8cm}
 
 
 \begin{center}
-29 May 2012
+23 July 2016
 \end{center}
 \newpage
 
@@ -174,6 +210,11 @@ Student's name / Student's ID number
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Brief Introduction/Summary of thesis topic}
 \label{sec:intro}
+Recent ``supercalibration" techniques revealed that distortions identified in the wavelength scales of echelle quasar spectra can possibly explain the not null relative variations in the fine-structure constant ($\varal$) acquired from velocity shifts between metal transitions in the large statistical samples of absorption systems. This motivates both exploration of new techniques which will allow accounting for these distortions, and new measurements of $\varal$ corrected for these distortions. In this work we measured $\varal$ in the absorption system at $\zab=1.1508$ towards HE 0515$-$4414 quasar from the extremely high $\SN$ ratio ($\sim$250 at its peak) Ultraviolet and Visual Echelle Spectrograph (UVES) spectrum constructed from new and all available archival spectra. Measurement was conducted after correcting UVES spectrum for the wavelength distortions by direct comparison with the High Accuracy Radial velocity Planet Searcher (HARPS) spectrum that can lead to systematic shift of $\approx$10\,parts per million (ppm). This allowed us to make the highest precision measurement of $\varal=-1.42\pm0.55_{\rm stat}\pm0.65_{\rm sys}$\,ppm in a single absorption system, comparable to the measurements from the previous large samples $\sim$150 of absorption systems. The largest systematic error term of $\sim$0.59\,ppm is due to uncertainties in aforementioned distortion corrections. Many new problems emerged in our analysis because of the very high $\SN$ ratio including fringing, data artifacts and necessity to estimate resolving power for each transition. They will certainly be present in spectra observed with a new generation of telescopes and will need very careful assessment in future studies. Our new method of calibrating existing UVES spectra with new well calibrated spectra of the same objects can be applied to upcoming facilities and would be the simplest and most efficient way to obtain reliable constraints of $\varal$ in the near future.
+
+
+
+
 
 Summarise thesis topic here.
  
@@ -218,7 +259,7 @@ Summarise thesis topic here.
 \label{sec:sciencePlan}
 
 \begin{itemize}
-  \item{Plan for the next 6 or 12 months (including papers and conferences).} \\}
+  \item{Plan for the next 6 or 12 months (including papers and conferences).} \\
 \item{This section should be at least 0.75 pages and should explain clearly what scientific goals need to be achieved to finalize the work for the thesis.}
  \item{Details of how each goal will be achieved, and whether the necessary data, facilities and time are available for it, should be described clearly.}
 \item{Reference to the relevant milestones in the "Timeline" section should be made.}
@@ -249,12 +290,25 @@ Summarise thesis topic here.
 
   My preliminary thesis plan is the following:
   \begin{itemize}
-    \item{First Chapter: } blah
-    \item{Second Chapter:} blah
-    \item{Third Chapter:} blah
-    \item{Fourth Chapter:} blah
-    \item{Fifth Chapter:} blah
-    \item{Appendix:} blah
+    \item{First Chapter: } Introduction 
+    
+    Most of this chapter has already been written as an introduction to my paper and in form of the literature review for my mid-candidature review. I plan to expand on this by including ...
+    \item{Second Chapter:} High-precision limit on variation in the fine-structure constant from $\zab=1.1508$ absorption system towards HE 0515$-$4414 
+    
+    This chapter has been written as a part of Kotus et al. (2016) publication which is submitted to MNRAS) 
+    \item{Third Chapter:} Analysis of the extremely high signal-to-noise ratio UVES spectrum of HE 0515$-$4414 and HARPS spectrum of the same object from the perspective of new generation of spectrographs and telescopes. 
+    
+    This chapter has been written as a part of Kotus et al. (2016) publication which is submitted to MNRAS)
+    \item{Fourth Chapter:} Measurement of $\varal$ in the ...
+    
+    This will mainly include the contents of my second publication.
+    \item{Fifth Chapter:} Conclusions
+    
+    
+    \item{Appendix:} Appendix
+    
+    For now I plan to include additional figures for fits to all transitions fitted in Kotus et al. (2016).
+    
   \end{itemize}
 
 
@@ -269,8 +323,8 @@ Summarise thesis topic here.
 \label{sec:timeline}
 
 \begin{tabular*}{0.75\textwidth}{ l l }
-  May 2013                  & Mid-candidature review \\
-  January 2014                & Second paper submission \\
+  August 2016                  & Preparation for the talks that I plan to give in Europe and the Varying constants conference \\
+  September 2016                & Series of talks in Europe and attending the Varying constants conference and Keck observations \\
   February-August 2014              & Third paper preparation \\
   May 2014                  & Pre-submission review \\
   September 2014              & Third paper submission \\
